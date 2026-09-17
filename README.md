@@ -63,3 +63,24 @@ In the top-right corner of the window, you'll find advanced function buttons:
 * **Buy me a coffee ☕:** If you find this tool helpful, please support the author to provide more motivation for development!
 
 Enjoy using the tool!
+
+## **IV. Creator Script and Image Optimization Tools**
+
+This repository now includes a reusable image optimization helper and a short-form content package for cat-video style assets.
+
+* Use [`scripts/generate_video_assets.py`](scripts/generate_video_assets.py) to generate a thumbnail SVG, animated vertical video mock, captions, metadata, and an optional FFmpeg render helper.
+* Use [`scripts/optimize_images.py`](scripts/optimize_images.py) to resize, compress, and optionally convert local image assets to WebP before publishing them on a website or social platform.
+* See [`content/cat-short-script-and-thumbnail-plan.md`](content/cat-short-script-and-thumbnail-plan.md) for a ready-to-use short video script, title options, hashtags, and thumbnail optimization checklist.
+* Generated sample assets live in [`assets/generated`](assets/generated), including a thumbnail, animated video mock, captions, and metadata manifest.
+
+Example video and thumbnail generation command:
+
+```bash
+python3 scripts/generate_video_assets.py --output-dir assets/generated
+```
+
+Example image optimization command:
+
+```bash
+python3 scripts/optimize_images.py ./assets --output-dir ./optimized-images --max-width 1280 --quality 82 --format webp
+```

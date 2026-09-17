@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+          <title id="title">Animated short video mock: MY CAT HAS ONE JOB…</title>
+          <desc id="desc">A 40-second vertical animated SVG storyboard for a funny orange cat short.</desc>
+          <style>
+            .caption { font: 800 58px Arial, sans-serif; fill: #fff; stroke: #000; stroke-width: 10px; paint-order: stroke; text-anchor: middle; opacity: 0; }
+            .headline { font: 900 90px Impact, Arial Black, sans-serif; fill: #ffe432; stroke: #000; stroke-width: 12px; paint-order: stroke; text-anchor: middle; }
+            .cat { animation: bounce 2s ease-in-out infinite alternate; transform-origin: 540px 780px; }
+            .glow { animation: pulse 1.25s ease-in-out infinite alternate; }
+            .bar { animation: progress 40s linear forwards; }
+            @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-48px); } }
+            @keyframes pulse { from { opacity: .35; } to { opacity: 1; } }
+            @keyframes progress { from { width: 0; } to { width: 880px; } }
+          </style>
+          <rect width="1080" height="1920" fill="#11131d"/>
+          <circle cx="920" cy="230" r="270" fill="#ffcf4a" opacity="0.25"/>
+          <text class="headline" x="540" y="210">MY CAT HAS ONE JOB…</text>
+          <g class="cat">
+            <ellipse cx="560" cy="800" rx="290" ry="210" fill="#d87922"/>
+            <circle cx="405" cy="670" r="145" fill="#d87922"/>
+            <path d="M300 565 L352 420 L426 575 Z" fill="#d87922"/>
+            <path d="M430 560 L510 420 L516 600 Z" fill="#d87922"/>
+            <circle class="glow" cx="360" cy="660" r="32" fill="#ffe95e"/>
+            <circle class="glow" cx="455" cy="660" r="32" fill="#ffe95e"/>
+            <path d="M382 724 Q414 750 452 724" stroke="#371b0b" stroke-width="13" fill="none" stroke-linecap="round"/>
+            <path d="M575 640 C675 710 770 705 895 635" stroke="#a64d16" stroke-width="26" fill="none" opacity="0.55"/>
+            <path d="M575 790 C690 850 815 845 940 760" stroke="#a64d16" stroke-width="26" fill="none" opacity="0.5"/>
+            <path d="M275 1000 C410 900 600 905 735 1015" stroke="#d87922" stroke-width="84" fill="none" stroke-linecap="round"/>
+          </g>
+          <rect x="170" y="1100" width="740" height="180" rx="48" fill="#050505" opacity="0.78"/>
+          <text x="540" y="1215" font-family="Impact, Arial Black, sans-serif" font-size="86" fill="#fff" stroke="#000" stroke-width="10" paint-order="stroke" text-anchor="middle">FULL-TIME CHAOS</text>
+          <text id="caption-0" class="caption" x="540" y="1540">My cat has one job…
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="0s" dur="3s" fill="remove"/>
+               </text>
+<text id="caption-1" class="caption" x="540" y="1540">Reach for attention before I can work.
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="3s" dur="5s" fill="remove"/>
+               </text>
+<text id="caption-2" class="caption" x="540" y="1540">Every time I open my laptop, Mac clocks in.
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="8s" dur="6s" fill="remove"/>
+               </text>
+<text id="caption-3" class="caption" x="540" y="1540">No meetings. No deadlines. Just full-time chaos.
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="14s" dur="8s" fill="remove"/>
+               </text>
+<text id="caption-4" class="caption" x="540" y="1540">Somehow, he still gets employee of the month.
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="22s" dur="9s" fill="remove"/>
+               </text>
+<text id="caption-5" class="caption" x="540" y="1540">Would your pet get hired for this job?
+                 <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="31s" dur="9s" fill="remove"/>
+               </text>
+          <rect x="90" y="1770" width="880" height="22" rx="11" fill="#313545"/>
+          <rect class="bar" x="90" y="1770" height="22" rx="11" fill="#ff2f6d"/>
+        </svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">MY CAT HAS ONE JOB… YouTube thumbnail</title>
+  <desc id="desc">Orange tabby cat jumping toward a chair with bold text reading MY CAT HAS ONE JOB….</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7d6"/>
+      <stop offset="0.55" stop-color="#ffcf4a"/>
+      <stop offset="1" stop-color="#24140a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 560 C230 480 340 640 520 540 C760 410 920 520 1280 390 L1280 720 L0 720 Z" fill="#fff" opacity="0.35"/>
+  <g filter="url(#shadow)">
+    <rect x="72" y="62" width="515" height="138" rx="24" fill="#111"/>
+    <rect x="72" y="207" width="570" height="152" rx="24" fill="#111"/>
+    <text x="104" y="168" font-family="Impact, Arial Black, sans-serif" font-size="92" fill="#fff" stroke="#000" stroke-width="8" paint-order="stroke">MY CAT</text>
+    <text x="104" y="318" font-family="Impact, Arial Black, sans-serif" font-size="96" fill="#ffe432" stroke="#000" stroke-width="8" paint-order="stroke">HAS ONE JOB...</text>
+    <path d="M95 603 L555 603" stroke="#df1414" stroke-width="104" stroke-linecap="round" opacity="0.95"/>
+    <text x="92" y="590" font-family="Impact, Arial Black, sans-serif" font-size="70" fill="#fff" stroke="#000" stroke-width="7" paint-order="stroke">REACH FOR</text>
+    <text x="92" y="678" font-family="Impact, Arial Black, sans-serif" font-size="82" fill="#ffe432" stroke="#000" stroke-width="8" paint-order="stroke">ATTENTION!</text>
+  </g>
+  <g transform="translate(720 110) rotate(8)" filter="url(#glow)">
+    <ellipse cx="255" cy="250" rx="250" ry="145" fill="#d87922"/>
+    <ellipse cx="80" cy="210" rx="118" ry="95" fill="#d87922"/>
+    <path d="M30 112 L66 24 L104 124 Z" fill="#d87922"/>
+    <path d="M106 118 L158 28 L168 143 Z" fill="#d87922"/>
+    <path d="M-12 366 C58 312 130 306 190 356" stroke="#d87922" stroke-width="54" fill="none" stroke-linecap="round"/>
+    <circle cx="42" cy="198" r="15" fill="#111"/>
+    <circle cx="112" cy="198" r="15" fill="#111"/>
+    <path d="M66 231 Q82 246 101 231" stroke="#421f0a" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M220 150 C275 190 325 190 410 160" stroke="#a64d16" stroke-width="15" fill="none" opacity="0.55"/>
+    <path d="M228 230 C288 265 362 262 450 220" stroke="#a64d16" stroke-width="15" fill="none" opacity="0.5"/>
+    <rect x="105" y="382" width="360" height="94" rx="30" fill="#151515"/>
+  </g>
+  <path d="M447 435 C520 452 585 432 626 382" stroke="#e41414" stroke-width="24" fill="none" stroke-linecap="round"/>
+  <path d="M624 382 L596 445 L565 395 Z" fill="#e41414"/>
+</svg>
