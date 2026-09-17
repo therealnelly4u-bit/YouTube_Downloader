@@ -63,3 +63,25 @@ In the top-right corner of the window, you'll find advanced function buttons:
 * **Buy me a coffee ☕:** If you find this tool helpful, please support the author to provide more motivation for development!
 
 Enjoy using the tool!
+
+## **IV. Creator Thumbnail and Video Tools**
+
+This repository includes source-image-driven tooling for short-form video
+packages. It uses a local creator-owned photo or video frame, rather than
+shipping unrelated placeholder visuals.
+
+* Use [`scripts/generate_video_assets.py`](scripts/generate_video_assets.py) to generate a thumbnail SVG, captions, edit brief, and optional FFmpeg render helper from a local JPEG, PNG, or WebP image.
+* Use [`scripts/optimize_images.py`](scripts/optimize_images.py) to resize, compress, and optionally convert local image assets to WebP before publishing them on a website or social platform.
+* See [`content/short-video-and-thumbnail-guide.md`](content/short-video-and-thumbnail-guide.md) for challenge and cat short scripts, thumbnail copy, and source-image package commands.
+
+Example video and thumbnail generation command:
+
+```bash
+python3 scripts/generate_video_assets.py path/to/reference.jpg --type challenge --output-dir assets/generated
+```
+
+Example image optimization command:
+
+```bash
+python3 scripts/optimize_images.py ./assets --output-dir ./optimized-images --max-width 1280 --quality 82 --format webp
+```
