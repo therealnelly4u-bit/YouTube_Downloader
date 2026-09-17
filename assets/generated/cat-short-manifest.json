@@ -1,0 +1,82 @@
+{
+  "platform_name_options": [
+    "TypeSprint Studio",
+    "KeyFlow Academy",
+    "SwiftKeys Lab",
+    "Accuracy Arcade"
+  ],
+  "selected_platform_name": "TypeSprint Studio",
+  "tagline": "Master Speed. Improve Accuracy.",
+  "video": {
+    "slug": "cat-short",
+    "duration_seconds": 40,
+    "title_options": [
+      "My Cat Has ONE Job… 😂 #shorts #funny #cat",
+      "Orange Cat Interrupts My Work Again #shorts #funny #cute",
+      "This Cat Works Full Time for Attention #shorts #viral",
+      "Cat Behavior: He Always Does This When I Work #shorts"
+    ],
+    "recommended_title": "My Cat Has ONE Job… 😂 #shorts #funny #cat",
+    "description": "Meet Mac, the orange tabby who treats attention like a full-time job. Every time work starts, he shows up with confidence, chaos, and perfect comedic timing.",
+    "hashtags": [
+      "#shorts",
+      "#funny",
+      "#cat",
+      "#cute",
+      "#viral",
+      "#moments",
+      "#catbehavior",
+      "#orangecat",
+      "#pets"
+    ],
+    "tags": [
+      "cat shorts",
+      "funny cat",
+      "orange tabby",
+      "cute cat video",
+      "cat interrupts work",
+      "pet comedy",
+      "viral cat moments",
+      "cat behavior"
+    ],
+    "thumbnail_alt": "Orange tabby cat jumping toward a chair with bold text reading MY CAT HAS ONE JOB…",
+    "scenes": [
+      {
+        "start": 0,
+        "end": 3,
+        "visual": "Glowing-eye orange tabby locks onto the workspace.",
+        "caption": "My cat has one job…"
+      },
+      {
+        "start": 3,
+        "end": 8,
+        "visual": "Cat leaps toward a chair beside the desk.",
+        "caption": "Reach for attention before I can work."
+      },
+      {
+        "start": 8,
+        "end": 14,
+        "visual": "Keyboard and laptop are blocked by paws.",
+        "caption": "Every time I open my laptop, Mac clocks in."
+      },
+      {
+        "start": 14,
+        "end": 22,
+        "visual": "Confident cat close-up with boss-energy pose.",
+        "caption": "No meetings. No deadlines. Just full-time chaos."
+      },
+      {
+        "start": 22,
+        "end": 31,
+        "visual": "Cat sits proudly like an employee of the month.",
+        "caption": "Somehow, he still gets employee of the month."
+      },
+      {
+        "start": 31,
+        "end": 40,
+        "visual": "Freeze frame with bold thumbnail text.",
+        "caption": "Would your pet get hired for this job?"
+      }
+    ]
+  }
+}
