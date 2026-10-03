@@ -15,7 +15,9 @@ import base64
 import html
 import json
 import mimetypes
+import os
 import shutil
+import shlex
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from textwrap import dedent
@@ -147,15 +149,22 @@ def main() -> int:
         ) + "\n",
         encoding="utf-8",
     )
+    source_relative_to_helper = Path(
+        os.path.relpath(args.source_image.resolve(), start=args.output_dir.resolve())
+    )
     render_helper.write_text(
         dedent(
             f"""\
             #!/usr/bin/env bash
             set -euo pipefail
             # Requires FFmpeg. Uses the supplied image as a 9:16 video backdrop.
-            ffmpeg -y -loop 1 -t {scenes[-1].end:g} -i {args.source_image} \\
-              -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,subtitles={captions.name}" \\
-              -c:v libx264 -pix_fmt yuv420p -movflags +faststart {slug}.mp4
+            script_dir="$(cd -- "$(dirname -- "${{BASH_SOURCE[0]}}")" && pwd)"
+            source_image="$script_dir"/{shlex.quote(source_relative_to_helper.as_posix())}
+            captions="$script_dir"/{shlex.quote(captions.name)}
+            output_video="$script_dir"/{shlex.quote(f"{slug}.mp4")}
+            ffmpeg -y -loop 1 -t {scenes[-1].end:g} -i "$source_image" \\
+              -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,subtitles=filename='$captions'" \\
+              -c:v libx264 -pix_fmt yuv420p -movflags +faststart "$output_video"
             """
         ),
         encoding="utf-8",

@@ -95,12 +95,29 @@ def iter_images(paths: Iterable[Path]) -> Iterable[Path]:
             print(f"Skipping unsupported path: {path}", file=sys.stderr)
 
 
-def destination_for(source: Path, output_dir: Path, output_format: str) -> Path:
-    if source.suffix.lower() == ".svg":
+def source_relative_path(source: Path, inputs: Iterable[Path]) -> Path:
+    """Return a source path relative to its input directory when possible."""
+    resolved_source = source.resolve()
+    matching_directories = []
+    for input_path in inputs:
+        if input_path.is_dir():
+            try:
+                matching_directories.append((input_path.resolve(), resolved_source.relative_to(input_path.resolve())))
+            except ValueError:
+                continue
+
+    if matching_directories:
+        # Prefer the most-specific input directory if inputs overlap.
+        return min(matching_directories, key=lambda match: len(match[1].parts))[1]
+    return Path(source.name)
+
+
+def destination_for(source_relative: Path, output_dir: Path, output_format: str) -> Path:
+    if source_relative.suffix.lower() == ".svg":
         suffix = ".svg"
     else:
-        suffix = ".webp" if output_format == "webp" else source.suffix.lower()
-    return output_dir / f"{source.stem}{suffix}"
+        suffix = ".webp" if output_format == "webp" else source_relative.suffix.lower()
+    return output_dir / source_relative.with_suffix(suffix)
 
 
 def optimize_with_pillow(
@@ -196,12 +213,27 @@ def main() -> int:
             file=sys.stderr,
         )
 
+    output_format = args.format if Image is not None else "original"
+    destinations: dict[Path, Path] = {}
+    source_destinations: dict[Path, Path] = {}
+    for source in images:
+        relative_source = source_relative_path(source, args.inputs)
+        destination = destination_for(relative_source, args.output_dir, output_format)
+        previous_source = destinations.setdefault(destination, source)
+        if previous_source != source:
+            print(
+                f"Refusing to overwrite duplicate destination {destination}: "
+                f"{previous_source} and {source}",
+                file=sys.stderr,
+            )
+            return 2
+        source_destinations[source] = destination
+
     total_original = 0
     total_optimized = 0
 
     for source in images:
-        output_format = args.format if Image is not None else "original"
-        destination = destination_for(source, args.output_dir, output_format)
+        destination = source_destinations[source]
 
         if args.dry_run:
             result = OptimizationResult(
